@@ -11,10 +11,10 @@
 Route::group(["prefix"=>"admin"],function(){
     
      //配置后台的登录
-     Route::get("index/login","Admin\IndexController@login");
+     Route::match(["post","get"],"public/login","Admin\PublicController@login");
 
      //配置后台的首页
-     Route::get("index/index","Admin\IndexController@index");
+     Route::get("public/index","Admin\PublicController@index");
 });
 
 

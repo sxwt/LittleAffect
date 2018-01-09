@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 /**
@@ -27,3 +24,6 @@ require_once("routes/admin/admin.php");
 
 //引入前台模块的路由文件
 require_once("routes/home/home.php");
+
+//配置默认路由进首页  auth认证不过会回到登录页
+Route::get('/',"Admin\PublicController@login");
