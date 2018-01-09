@@ -1,0 +1,146 @@
+
+//git仓库
+==========================
+|  工作空间               |
+|                        |
+|  .git                  |
+| ====================   |
+| |   暂   |    主   |   ｜
+| |   存   |    分   |   ｜
+| |   区   |    支   |   ｜
+| ====================   |
+==========================
+
+工作空间：我们项目所在的文件夹就是我们的工作空间，因为我们就是做项目的，这就是我们的工作
+暂存区：就是我们在工作空间里的 新建文件、修改的文件等需要添加到暂存区里，后面需要提交到主分支上
+主分区：就是我们开发项目的代码分支，这里增量存储了我们每一次提交的记录
+
+git add  将工作空间里的修改添加到暂存区
+git commit  将暂存区的修改添加到master主分支
+
+
+
+git 命令
+
+1.git init 
+    解释：该命令是用于初始化当前文件夹为git的仓库，初始化完成后，文件夹下会多出一个.git的目录(隐藏文件)。
+    注意：以防万一，初始化的仓库路径中不要是带有中文，.git目录千万不要动，否则就会破坏掉仓库
+  git clone 远程仓库
+    解释：将远程仓库克隆到本地
+
+2.git add 文件名/文件夹
+    解释：将新建的文件或者文件夹添加到版本git控制中,跟SVN的 add差不多一个意思
+
+3.git commit 文件名/文件夹 -m '提交的日志描述'
+    例如： git  commit  README.md   -m '初始化项目的规范和项目介绍'
+    注意： 一个新文件需要先git add 一次到暂存区才开一
+4.git status 
+    解释：查看当前git仓库的状态，例如：有哪些文件被改动了，哪些文件有冲突了
+
+
+5.git diff 文件名
+    解释：查看当前的文件，跟git仓库里的文件相比，变动了哪些
+    + 开头表示添加 表示仓库里的文件里没有，当前文件新添加
+    - 开头表示删除 表示仓库里的文件里有，当前文件已经删除
+
+6.git log  查看提交的日志
+    git log --pretty = online 简单的查看
+
+7.git reset --hard HEAD~  
+    解释：表示回退到上一次提交的版本  
+    git reset --hard HEAD~2 回退到上2次提交的版本
+    git reset --hard 版本号  回到指定的版本
+
+8.git reflog
+    解释：查看git 记录的命令日志,当回退版本的时候，想再回到最新版本，找不到最新版本号
+          就可以使用该命令查看命令日志
+
+9.git  checkout -- file 
+    解释：将修改还未提交的文件撤销
+          1.当修改了文件，还没有添加到暂存区的，撤回到跟仓库里一摸一样
+          2.当已经添加到暂存区之后又做了修改的，撤回到跟暂存区一摸一样
+
+10.git rm  文件
+    解释：删除文件,配合 git commit 使用
+    注意：这里只是从版本库里把文件删掉，工作空间的文件需要自行删除
+    例如：
+          1.rm file.txt 
+          2.git rm file.txt 
+          3.git commit -m '删除file.txt文件'
+
+    其他：如果是误删了工作空间的文件，那么可以通过control+z 撤销
+          如果撤销不了了，可以通过git checkout -- file的命令从仓库里检出一分
+          如果版本库里已经没有了，可以通过git rest --Hard 命令切换版本，然后将文件备份
+          然后再切换回最新的版本，再将文件拷回，重新提交
+
+11.git remote add origin https://github.com/GitHubOfJW/Cosmetics.git
+    解释：将本地的仓库推送到远程仓库
+
+
+12.git push -u origin master 
+    解释：将本地的仓库内容推送到远程的仓库
+
+
+13.git checkout -b 分支名
+    解释：创建一个分支并且切换到该分支
+    相当于 
+        git branch 分支名  解释：创建分支
+        git checkout 分支名 解释：切换分支
+
+14.git branch 
+    解释：查看当前的所有分支
+
+
+15.git merge 分支名 
+    解释：将该分支合并到当前分支上
+
+16.git branch -d 分支名
+    解释：删除分支
+    如果没有合并的要强制删除  git branch -D 分支名  
+
+
+17.解决冲突  在分支上合并
+
+
+18.通常使用的分支模式是Fast forward模式，但是这种模式删除分支会同时删掉分支信息。
+   如果关掉这个模式，git就会在合并时生成新的提交记录，这样分支的log记录里就能看到分支的信息
+   采用：--no-ff 的git merge 方式
+
+   git merge --no-ff -m 'log描述' 分支名
+
+19.git stash 暂时保存当前分支的工作区
+   git stash list 查看当前分支的工作区
+   
+   恢复工作区到当前分支
+   第一种方式：git stash apply [stash@{0}] 2. git stash drop [stash@{0}] 
+   第二种方式：git stash pop
+
+   可以多次保存，恢复的时候可以指定恢复
+   git stash applay stash@{0}
+
+
+20.git remote  查看远程库的信息
+   git remote -v  查看更详细
+   如果没有关联过差看不到
+
+
+21.git push origin master
+   解释：推送到远程分支上
+   git push origin 分支名
+
+22.git push origin 本地分支名[:远程分支名] 同名可省略
+    将本地创建的分支推送到远程上
+    将本地分支的仓库数据推送到远程仓库
+    如果就在当前分支下，直接 git push 也可以
+
+23.git push origin --delete 远程分支名
+    删除远程分支
+    另一种方式  git push origin :远程分支名
+
+24.git checkout --track origin/远程分支名
+    从服务器上拉取特定分支
+
+25.git fetch origin 
+    从远程服务器上拉取更新，别人如果提交了，更新别人的提交
+
+26.git pull origin 分知名
