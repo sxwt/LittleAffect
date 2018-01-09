@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/**
+ *  路由文件分离到routes 文件夹下的 admin和home 两个文件夹中
+ *  团队开发方便维护,避免多人编辑一个文件
+ */
+
+//引入后台模块的路由文件
+require_once("routes/admin/admin.php");
+
+
+//引入前台模块的路由文件
+require_once("routes/home/home.php");
