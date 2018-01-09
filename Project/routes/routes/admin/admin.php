@@ -10,7 +10,11 @@
 //定义admin路由
 Route::group(["prefix"=>"admin"],function(){
     
-     //配置
+     //配置后台的登录
+     Route::get("index/login","Admin\IndexController@login");
+
+     //配置后台的首页
+     Route::get("index/index","Admin\IndexController@index");
 });
 
 
