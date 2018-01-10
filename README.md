@@ -1,23 +1,23 @@
 ## 点文
 
 ### 项目简介
-#### laravel 5.5版本
-#### php > 7.0
-#### mysql 非严格模式 默认引擎：innodb
-#### 默认缓存 Radis 
+-  laravel 5.5版本
+-  php > 7.0
+-  mysql 非严格模式 默认引擎：innodb
+-  默认缓存 Radis 
 
 ### 项目初始化  
-#### 1.创建数据库 CREATE DATABASE `littleaffect` DEFAULT CHARACTER SET utf8;
-#### 2.生成迁移文件日志：php arisan migrate:install  第一次生成使用
-#### 3.执行迁移文件:php artisan migrate  生成数据表
-#### 4.执行填充器文件：php artisan db:seed --class=填充器文件名
+-  1.创建数据库 CREATE DATABASE `littleaffect` DEFAULT CHARACTER SET utf8;
+-  2.生成迁移文件日志：php arisan migrate:install  第一次生成使用
+-  3.执行迁移文件:php artisan migrate  生成数据表
+-  4.执行填充器文件：php artisan db:seed --class=填充器文件名
 
 ### 其他命令
-#### 1.创建迁移文件：php artisan make:migration 迁移文件名称
-#### 2.创建填充器文件：php artisan make:seeder  填充器名称
-#### 3.创建控制器：php artisan make:controller  控制器名称(Admin/IndexController)
-#### 4.创建模型：php artisan make:model model名称(Admin/User)
-#### 5.创建中间件：php artisan make:middleware 中间件名称
+-  1.创建迁移文件：php artisan make:migration 迁移文件名称
+-  2.创建填充器文件：php artisan make:seeder  填充器名称
+-  3.创建控制器：php artisan make:controller  控制器名称(Admin/IndexController)
+-  4.创建模型：php artisan make:model model名称(Admin/User)
+-  5.创建中间件：php artisan make:middleware 中间件名称
  
 
 ### 后端使用h-ui模板开发
