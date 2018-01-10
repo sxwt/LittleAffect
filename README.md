@@ -65,7 +65,7 @@ $(function(){
 });
 
 
-``` 
+```php
 //php
 <?php
    $message = "好好学习 , 天天向上";
