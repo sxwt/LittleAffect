@@ -5,13 +5,13 @@
 注意：第一次使用需要初始化git的信息配置
 
 ### git学习地址
-    [git学习地址](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)：简单了解一下即可.
+[git学习地址](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)：了解即可.
 
 - 1.电脑上新建一个工作目录(自己取名),进入目录右击 git bash here .
 - 2.进入自己的账号，找到刚才fork的仓库（注意是自己账号的仓库）.
 - 3.点击clone or download 按钮（如果显示 use ssh 则点一下），拷贝地址.
 - 4.git bash here 中输入的 git clone 拷贝的地址 .
-- 5. 。。。。略
+- 5.略
 
 
 ### 项目简介
@@ -55,7 +55,20 @@
 - 2.建议简单功能需要联表的，能使用关联模型的则使用关联模型，关联模型实现了懒加载，可以在一定程度上减少不必要的查询，且开发方便.
 - 3.获取请求参数的时候，能使用Request的则使用request的 例如：不用Input::method(),而使用$request->method(); 注意：添加Request $request 形参.
 
-```php
-echo "好好学习，天天向上！";
+#### 技术交流
 
+```javascript
+//javascript
+$(function(){
+   var message =  "微信号：zhujianwei9823";
+   alert(message);
+});
+
+
+``` 
+
+<?php
+   $meesage 
+   echo "";
+?>
 ```
