@@ -13,7 +13,7 @@ class CreateManangerTable extends Migration
      */
     public function up()
     {
-        Schema::create('Mananger', function (Blueprint $table) {
+        Schema::create('Manager', function (Blueprint $table) {
            //编号
            $table->increments('id');
            //用户名
@@ -42,6 +42,6 @@ class CreateManangerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Mananger');
+        Schema::dropIfExists('Manager');
     }
 }

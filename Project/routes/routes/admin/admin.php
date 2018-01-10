@@ -15,6 +15,11 @@ Route::group(["prefix"=>"admin"],function(){
 
      //配置后台的首页
      Route::get("public/index","Admin\PublicController@index");
+     Route::get("public/welcome","Admin\PublicController@welcome");
+
+     //退出
+     Route::get("public/logout","Admin\PublicController@logout");
+
 });
 
 

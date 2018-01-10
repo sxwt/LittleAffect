@@ -12,7 +12,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     //ajax 请求 成功或者失败的返回json数据模板
-    public function getJosnResponse($code,$message,$extra=[]){
+    public function getJsonResponse($code,$message,$extra=[]){
         //响应
         return Response() -> json(["code"=>$code,"message"=>$message,"extra"=>$extra]);
     }

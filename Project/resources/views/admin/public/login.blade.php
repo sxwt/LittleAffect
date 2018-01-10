@@ -32,18 +32,18 @@
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="text" placeholder="账户" class="input-text size-L">
+          <input id="username" name="username" type="text" placeholder="账户" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="password" placeholder="密码" class="input-text size-L">
+          <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
+          <input class="input-text size-L" type="text" name="captcha" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
           <img id="captcha" src="{{captcha_src()}}"> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
       </div>
       <div class="row cl">
@@ -66,7 +66,7 @@
 <div class="footer">Copyright 你的公司名称 by H-ui.admin v3.1</div>
 <script type="text/javascript" src="/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/admin/lib/layer2.4/layer.js"></script>
+<script type="text/javascript" src="/admin/lib/layer/2.4/layer.js"></script>
  
 <script type="text/javascript">
 
@@ -84,9 +84,21 @@
     $("form").ajaxForm({
         type:"POST",
         url:"/admin/public/login",
+        //发送请求之前回调，提示
+        beforeSubmit:function(){
+           layer.msg("登录中...");
+           return true;
+        },
         success:function(data){
-            console.log(data);
-            Layer.alert(data);
+          if(data.code != "0"){
+            layer.alert(data.message);
+            imgObj.attr("src",src+"?seed="+Math.floor(Math.random()*100));
+            return;
+          }
+
+          //发送请求成功
+          window.location.href = "/admin/public/index";
+
         }
     });
 
