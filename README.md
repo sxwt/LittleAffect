@@ -14,7 +14,7 @@
 - 5.略
 
 
-### 项目简介
+### 项目环境
 -  laravel 5.5版本.
 -  php > 7.0.
 -  mysql 非严格模式 默认引擎：innodb.
@@ -66,9 +66,9 @@ $(function(){
 
 
 ``` 
-
+//php
 <?php
-   $meesage 
-   echo "";
+   $message = "好好学习 , 天天向上";
+   echo $meesage;
 ?>
 ```
