@@ -61,7 +61,8 @@
 //javascript
 $(function(){
    var message =  "微信号：zhujianwei9823";
-   alert(message);
+   var qqMessage = "QQ：1284627282";
+   alert(message." ".qqMessage);
 });
 ```
 
