@@ -30,4 +30,6 @@ Flex Box
 9.align-self 元素设置自己在父盒子中的侧轴对齐方式，不听父盒子的，搞独立
     auto|flex-start|flex-end|center|baseline|stretch
 
-10.flex 指定在父盒子中所占的空间比例
+10.flex 指定在父盒子中所占的空间
+    auto|initial|none|inherit|flex-grow|flex-shrink|flex-basis
+
