@@ -1,0 +1,35 @@
+
+
+Flex Box
+
+1.direction 可以修改弹性盒子的排列方式
+    rtl:right-to-left;
+    ltr:left-to-right;
+
+2.flex-direction 指定子元素的布局方向
+    row|row-reverse|column|column-reverse
+    横向布局|横向倒着布局|纵向布局|纵向倒着布局
+
+3.justify-content 设置主轴上的内容对齐方式(flex-direction的方向为主轴方向)
+    flex-start|flex-end|center|space-between|space-around
+
+4.align-items 设置侧轴上的内容对齐方式(主轴的垂直方向为侧轴)
+    flex-start|flex-end|center|baseline|stretch
+
+5.flex-wrap 设置盒子的换行方式，子元素太多，则可能需要换行
+    nowrap|wrap|wrap-reverse|initial|inherit
+
+6.align-content 如果弹性盒子的子元素出现了换行，该属性用于设置行与行之间的布局方式
+    flex-start|flex-end|center|space-between|space-around|stretch
+
+7.order 子元素设置该属性之后，父元素将按照order的数值进行排序布局
+    order:-1; 靠前排
+
+8.margin:auto 子元素可以设置该属性实现在父盒子中完美居中
+
+9.align-self 元素设置自己在父盒子中的侧轴对齐方式，不听父盒子的，搞独立
+    auto|flex-start|flex-end|center|baseline|stretch
+
+10.flex 指定在父盒子中所占的空间
+    auto|initial|none|inherit|flex-grow|flex-shrink|flex-basis
+

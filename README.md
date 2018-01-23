@@ -44,16 +44,17 @@
 
 ### 前台模块
 - 前台页面要求自己设计，页面可以仿照[简书](https://www.jianshu.com/)页面.
+- 前台建议全部使用原生开发，不引入任何三方插件，如果必须引入，请放到libs下
 - 项目数据表参考可参考 项目 文件夹下的 项目数据库设计.xmind 文件.
 - 项目模块功能可参考 项目 文件夹下的 项目功能.xmind 文件.
 - 仓库管理 git命令文件 项目 文件夹下的 git.txt文件.
 
 
 ### 规范
-- 0.必须有详细的注释，方法注释，方法内部功能具体注释.
-- 1.只允许修改自己的路由文件，例如：routes/routes/admin/文件夹下每个人有一个路由文件，只允许修改自己的路由文件.
-- 2.建议简单功能需要联表的，能使用关联模型的则使用关联模型，关联模型实现了懒加载，可以在一定程度上减少不必要的查询，且开发方便.
-- 3.获取请求参数的时候，能使用Request的则使用request的 例如：不用Input::method(),而使用$request->method(); 注意：添加Request $request 形参.
+- 必须有详细的注释，方法注释，方法内部功能具体注释.
+- 只允许修改自己的路由文件，例如：routes/routes/admin/文件夹下每个人有一个路由文件，只允许修改自己的路由文件.
+- 建议简单功能需要联表的，能使用关联模型的则使用关联模型，关联模型实现了懒加载，可以在一定程度上减少不必要的查询，且开发方便.
+- 获取请求参数的时候，能使用Request的则使用request的 例如：不用Input::method(),而使用$request->method(); 注意：添加Request $request 形参.
 
 #### 技术交流
 
@@ -61,7 +62,8 @@
 //javascript
 $(function(){
    var message =  "微信号：zhujianwei9823";
-   alert(message);
+   var qqMessage = "QQ：1284627282";
+   alert(message." ".qqMessage);
 });
 ```
 
@@ -70,5 +72,6 @@ $(function(){
 <?php
    $message = "好好学习 , 天天向上";
    echo $meesage;
+   echo "-------";
 ?>
 ```

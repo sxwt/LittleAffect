@@ -4,6 +4,7 @@
 
 
 //引入其它模块的路由 begin
+require("comment.php");
 
 //引入其他模块的路由 end
 
